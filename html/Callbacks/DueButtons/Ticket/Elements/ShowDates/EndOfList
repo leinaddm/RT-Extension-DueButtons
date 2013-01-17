@@ -1,0 +1,42 @@
+<tr>
+<td class="label">Update Due<br>Date to:</td>
+<td>
+<table><tr><td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+<input type="hidden" name="Due_Date" value="tomorrow">
+<input type="submit" value="tomorrow" name="AddToDueDate">
+</form>
+</td>
+<td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+<input type="hidden" name="Due_Date" value="next week">
+<input type="submit" value="next week" name="AddToDueDate">
+</form>
+</td>
+<td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+<input type="hidden" name="Due_Date" value="next month">
+<input type="submit" value="next month" name="AddToDueDate">
+</form>
+</td>
+<td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+<input type="hidden" name="Due_Date" value="0">
+<input type="submit" value="reset" name="AddToDueDate">
+</form>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+
+
+<%ARGS>
+$Ticket => undef
+</%ARGS>
+
+
