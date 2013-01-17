@@ -1,11 +1,3 @@
-package RT::Extension::DueButtons;     
-
-our $VERSION = '0.01';
-
-use 5.008003;
-use warnings;
-use strict;  
-
 =head1 NAME
 
 RT::Extension::DueButtons - shortcut buttons to quickly set due dates for ticket
@@ -21,6 +13,7 @@ Clone this repository into your RT plugins directory
 (F</opt/rt4/local/plugins>).
 
 Enable the plugin in your RT_SiteConfig.pm,
+
     # in RT_SiteConfig
     Set(@Plugins,
         ... other plugins ...,
@@ -72,7 +65,3 @@ SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
 SUCH DAMAGES.
 
 =cut
-
-
-
-1;
