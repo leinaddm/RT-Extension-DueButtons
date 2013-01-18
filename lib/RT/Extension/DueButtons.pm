@@ -1,78 +1,62 @@
-package RT::Extension::DueButtons;     
+use strict;
+use warnings;
+package RT::Extension::DueButtons;
 
 our $VERSION = '0.01';
 
-use 5.008003;
-use warnings;
-use strict;  
-
 =head1 NAME
 
-RT::Extension::DueButtons - shortcut buttons to quickly set due dates for ticket
+RT-Extension-DueButtons - shortcut buttons to quickly set due dates for ticket
 
 =head1 DESCRIPTION
 
 After installing this extension, on the ticket's page, you should see new
 buttons to set the ticket due date to: tomorrow, next week, next month or to reset it
 
-=head1 INSTALLATION
+=head1 INSTALLATION 
 
-Clone this repository into your RT plugins directory
-(F</opt/rt4/local/plugins>).
+=over
 
-Enable the plugin in your RT_SiteConfig.pm,
-    # in RT_SiteConfig
-    Set(@Plugins,
-        ... other plugins ...,
-        'RT::Extension::DueButtons',
-    );
+=item perl Makefile.PL
 
-Flush mason cache:
+=item make
+
+=item make install
+
+May need root permissions
+
+=item Edit your /opt/rt4/etc/RT_SiteConfig.pm
+
+Add this line:
+
+    Set(@Plugins, qw(RT::Extension::DueButtons));
+
+or add C<RT::Extension::DueButtons> to your existing C<@Plugins> line.
+
+=item Clear your mason cache
 
     rm -rf /opt/rt4/var/mason_data/obj
 
-Stop and start webserver.
+=item Restart your webserver
+
+=back
+
+=head1 AUTHOR
+
+Daniel De Marco <ddm@didiemme.net>
 
 =head1 BUGS AND LIMITATIONS
 
 No bugs have been reported.
 
-=head1 AUTHOR
+=head1 LICENSE AND COPYRIGHT
 
-Daniel De Marco E<lt>ddm@didiemme.netE<gt>
+This software is Copyright (c) 2013 by Daniel De Marco
 
-=head1 LICENCE AND COPYRIGHT
+This is free software, licensed under:
 
-Copyright (c) 2013, Daniel De Marco. All rights reserved.
-
-This module is free software; you can redistribute it and/or
-modify it under the terms of version 2 of the GNU General Public License.
-
-=head1 DISCLAIMER OF WARRANTY
-
-BECAUSE THIS SOFTWARE IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY
-FOR THE SOFTWARE, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN
-OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES
-PROVIDE THE SOFTWARE "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER
-EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE
-ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE SOFTWARE IS WITH
-YOU. SHOULD THE SOFTWARE PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL
-NECESSARY SERVICING, REPAIR, OR CORRECTION.
-
-IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING
-WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY AND/OR
-REDISTRIBUTE THE SOFTWARE AS PERMITTED BY THE ABOVE LICENCE, BE
-LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL,
-OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE
-THE SOFTWARE (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING
-RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A
-FAILURE OF THE SOFTWARE TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
-SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
-SUCH DAMAGES.
+  The GNU General Public License, Version 2, June 1991
 
 =cut
-
-
 
 1;
