@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package RT::Extension::DueButtons;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 NAME
 
@@ -10,8 +10,10 @@ RT-Extension-DueButtons - shortcut buttons to quickly set due dates for ticket
 
 =head1 DESCRIPTION
 
-After installing this extension, on the ticket's page, you should see new
-buttons to set the ticket due date to: tomorrow, next week, next month or to reset it
+After installing this extension, on the ticket's page, you should see
+new buttons to set the ticket due date to: tomorrow, next week, next
+monday, next month or to reset it. The first four buttons will also
+Stall the ticket. The reset button doesn't change the ticket status.
 
 =head1 INSTALLATION 
 
