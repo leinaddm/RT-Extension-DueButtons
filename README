@@ -4,9 +4,18 @@ NAME
 
 DESCRIPTION
     After installing this extension, on the ticket's page, you should see
-    new buttons to set the ticket due date to: tomorrow, next week, next
-    monday, next month or to reset it. The first four buttons will also
-    Stall the ticket. The reset button doesn't change the ticket status.
+    new buttons to set the ticket due date.
+
+    The +1d, +2d, +3d, +1w, +1m buttons will advance the current due date
+    for the ticket by the corresponding time amount. If the due date is not
+    set at the moment, they will assume today's date as the base for the
+    advancement.
+
+    The tomorrow, next monday and reset buttons will set the due date to
+    tomorrow, next monday or reset it respectively.
+
+    All buttons except for the reset one will also set the ticket status to
+    Stalled. The reset button does not change the ticket status.
 
 INSTALLATION
     perl Makefile.PL

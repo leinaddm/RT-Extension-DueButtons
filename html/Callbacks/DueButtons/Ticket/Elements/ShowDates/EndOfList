@@ -1,7 +1,69 @@
 <tr>
-<td class="label">Update Due<br>Date to:</td>
+<td class="label" style="vertical-align: top;">Stall &amp;<br>Update Due<br>Date to:</td>
 <td>
-<table><tr><td>
+<table>
+% my $due;
+<tr>
+<td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+% $due = $Ticket->DueObj;
+% if ($due->Unix == 0) { $due->SetToNow; }
+% $due->AddDays(1);
+<input type="hidden" name="Due_Date" value="<% $due->AsString %>">
+<input type="hidden" name="Status" value="stalled">
+<input type="submit" value="+1d" name="AddToDueDate">
+</form>
+</td>
+<td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+% $due = $Ticket->DueObj;
+% if ($due->Unix == 0) { $due->SetToNow; }
+% $due->AddDays(2);
+<input type="hidden" name="Due_Date" value="<% $due->AsString %>">
+<input type="hidden" name="Status" value="stalled">
+<input type="submit" value="+2d" name="AddToDueDate">
+</form>
+</td>
+<td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+% $due = $Ticket->DueObj;
+% if ($due->Unix == 0) { $due->SetToNow; }
+% $due->AddDays(3);
+<input type="hidden" name="Due_Date" value="<% $due->AsString %>">
+<input type="hidden" name="Status" value="stalled">
+<input type="submit" value="+3d" name="AddToDueDate">
+</form>
+</td>
+<td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+% $due = $Ticket->DueObj;
+% if ($due->Unix == 0) { $due->SetToNow; }
+% $due->AddDays(7);
+<input type="hidden" name="Due_Date" value="<% $due->AsString %>">
+<input type="hidden" name="Status" value="stalled">
+<input type="submit" value="+1w" name="AddToDueDate">
+</form>
+</td>
+<td>
+<form method="post" action="Display.html">
+<input type="hidden" name="id" value="<% $Ticket->id %>">
+% $due = $Ticket->DueObj;
+% if ($due->Unix == 0) { $due->SetToNow; }
+% $due->AddDays(30);
+<input type="hidden" name="Due_Date" value="<% $due->AsString %>">
+<input type="hidden" name="Status" value="stalled">
+<input type="submit" value="+1m" name="AddToDueDate">
+</form>
+</td>
+</tr>
+</table>
+<table>
+<tr>
+<td>
 <form method="post" action="Display.html">
 <input type="hidden" name="id" value="<% $Ticket->id %>">
 <input type="hidden" name="Due_Date" value="tomorrow">
@@ -12,25 +74,9 @@
 <td>
 <form method="post" action="Display.html">
 <input type="hidden" name="id" value="<% $Ticket->id %>">
-<input type="hidden" name="Due_Date" value="next week">
-<input type="hidden" name="Status" value="stalled">
-<input type="submit" value="next week" name="AddToDueDate">
-</form>
-</td>
-<td>
-<form method="post" action="Display.html">
-<input type="hidden" name="id" value="<% $Ticket->id %>">
 <input type="hidden" name="Due_Date" value="next monday">
 <input type="hidden" name="Status" value="stalled">
-<input type="submit" value="next monday" name="AddToDueDate">
-</form>
-</td>
-<td>
-<form method="post" action="Display.html">
-<input type="hidden" name="id" value="<% $Ticket->id %>">
-<input type="hidden" name="Due_Date" value="next month">
-<input type="hidden" name="Status" value="stalled">
-<input type="submit" value="next month" name="AddToDueDate">
+<input type="submit" value="monday" name="AddToDueDate">
 </form>
 </td>
 <td>
@@ -44,6 +90,8 @@
 </table>
 </td>
 </tr>
+
+
 
 
 <%ARGS>
