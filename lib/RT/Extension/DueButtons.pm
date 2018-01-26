@@ -2,7 +2,18 @@ use strict;
 use warnings;
 package RT::Extension::DueButtons;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
+
+$RT::Config::META{'DueButtons'} = {
+    Section         => 'Ticket display',
+    Overridable     => 1,
+    Widget          => '/Widgets/Form/Boolean',
+    WidgetArguments => {
+        Description => 'Display Due Date Buttons at Dates Widget', # loc
+        Hints       => '(' . __PACKAGE__ . ')',
+    },
+};
+
 
 =head1 NAME
 
